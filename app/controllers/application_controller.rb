@@ -10,7 +10,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    erb :welcome
+    if logged_in?
+      redirect "/inventories"
+    else
+      erb :"/welcome"
+    end
   end
 
   helpers do
@@ -27,12 +31,12 @@ class ApplicationController < Sinatra::Base
 
     def if_logged_out
       if !logged_in?
-        redirect "/user/signin"
+        redirect "/users/signin"
       end
     end
     
   end
   
+end
   
 
-end

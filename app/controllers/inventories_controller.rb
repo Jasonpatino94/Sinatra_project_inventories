@@ -3,7 +3,6 @@ class InventoriesController < ApplicationController
   # GET: /inventories
   get "/inventories" do
     #redirect if_logged_out
-    binding.pry
     @inv = current_user.inventories
     erb :"/inventories/index.html"
   end
@@ -17,7 +16,7 @@ class InventoriesController < ApplicationController
 
   # POST: /inventories
   post "/inventories" do
-     @inv = Inventory.new(params)
+     @inv = Inventory.new(year: params[:year], make: params[:make], model: params[:model], kind: params[:kind], user_id: current_user.id)
     if @inv.save 
       redirect "/inventories/#{@inv.id}"
     else
