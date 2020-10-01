@@ -1,0 +1,14 @@
+<h1>Insert the form to edit an instance of your model here.</h1>
+<form action= "/inventories/<%= @inv.id %>" method="POST">
+<input id="hidden" type="hidden" name="_method" value="patch">
+Year : <input type=number value="<%= @inv.year %>"  name="year">
+Make : <input type=text value="<%= @inv.make %>" name="make">
+Model : <input type=text value="<%= @inv.model %>" name="model">
+Type : <input type=text value="<%= @inv.kind %>" name="kind">
+<input type=submit value="Edit">
+</form> 
+
+<form action= "/inventories/<%= @inv.id %>" method="POST">
+<input id="hidden" type="hidden" name="_method" value="DELETE">
+<input type=submit value="Delete">
+</form>

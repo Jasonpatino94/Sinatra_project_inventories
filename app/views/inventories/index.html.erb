@@ -1,0 +1,17 @@
+<h1>This is the Model's index page.</h1>
+
+<form action="/users/signout" method="post">
+<input type="hidden" name="_method" value="DELETE">
+<input type="submit" value="Sign Out"> </form>
+
+
+
+<% @inv.each do |inv| %>
+<a href="/inventories/<%= inv.id %>">
+Year :<%= inv.year %><br>
+Make :<%= inv.make %><br>
+Model:<%= inv.model %></a><br>
+<br><br>
+<% end %>
+
+<a href="/inventories/new">Add New Inventory</a>

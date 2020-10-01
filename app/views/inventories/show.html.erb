@@ -1,0 +1,17 @@
+<h1>This is the show page for an individual instance of your model.</h1>
+
+
+Year :<%= @inv.year %> 
+<br>
+Make :<%= @inv.make %>
+<br>
+Model :<%= @inv.model %>
+<br>
+Type :<%= @inv.kind %>
+
+<br>
+<br>
+
+<a href="/inventories">Go back to all of your Vehicles</a><br><br>
+<a href="/inventories/<%= @inv.id %>/edit">Edit or Delete this Vehicle</a>
+
