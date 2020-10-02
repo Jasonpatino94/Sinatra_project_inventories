@@ -34,6 +34,12 @@ class ApplicationController < Sinatra::Base
         redirect "/users/signin"
       end
     end
+
+    def authorized_user?(inventory)
+      inventory.user == current_user
+    end
+
+
     
   end
   

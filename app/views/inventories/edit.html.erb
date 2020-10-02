@@ -1,4 +1,5 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h1>What would you like to change?</h1>
+
 <form action= "/inventories/<%= @inv.id %>" method="POST">
 <input id="hidden" type="hidden" name="_method" value="patch">
 Year : <input type=number value="<%= @inv.year %>"  name="year">

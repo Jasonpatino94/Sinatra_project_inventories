@@ -36,6 +36,11 @@ class InventoriesController < ApplicationController
   # GET: /inventories/5/edit
   get "/inventories/:id/edit" do
     @inv = Inventory.find(params[:id])
+    if authorized_user?(@inv)
+      erb :"/inventories/edit.html"
+    else
+      redirect "/inventories"
+    end
     
     erb :"/inventories/edit.html"
   end
@@ -48,10 +53,6 @@ class InventoriesController < ApplicationController
     model: params[:model],
     kind: params[:kind])
     
-    
-  #binding.pry
-    
-    redirect "/inventories/#{@inv.id}"
   end
 
   # DELETE: /inventories/5/delete

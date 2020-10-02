@@ -1,4 +1,4 @@
-<h1>This is the show page for an individual instance of your model.</h1>
+<h1>What would you like to do?</h1>
 
 
 Year :<%= @inv.year %> 
@@ -13,5 +13,7 @@ Type :<%= @inv.kind %>
 <br>
 
 <a href="/inventories">Go back to all of your Vehicles</a><br><br>
-<a href="/inventories/<%= @inv.id %>/edit">Edit or Delete this Vehicle</a>
+<%if authorized_user?(@inv)%>
+    <a href="/inventories/<%= @inv.id %>/edit">Edit or Delete this Vehicle</a>
+<%end%>
 
